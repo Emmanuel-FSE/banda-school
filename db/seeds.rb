@@ -30,6 +30,6 @@
       gender: Faker::Gender.binary_type,
       course_id: course.id,
       fee_paid: Faker::Number.between(from: 1000, to: 10000),
-      password_digest: "password"
+      password: "password"
     )
   end

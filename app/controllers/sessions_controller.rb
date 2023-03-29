@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+    
     def create
         student = Student.find_by(admission_number: params.dig(:login, :admission_number))
         session[:student_id] = student.id
