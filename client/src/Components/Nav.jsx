@@ -43,7 +43,7 @@ function Nav() {
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive ? "text-yellow-500 font-bold underline" : "underline"
+                  isActive ? "text-yellow-500 font-bold underline" : "no-underline"
                 }
               >
                 Home
@@ -51,7 +51,7 @@ function Nav() {
               <NavLink
                 to="/courses"
                 className={({ isActive }) =>
-                  isActive ? "text-yellow-500 font-bold underline" : "underline"
+                  isActive ? "text-yellow-500 font-bold underline" : "no-underline"
                 }
               >
                 Courses
@@ -59,7 +59,7 @@ function Nav() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive ? "text-yellow-500 font-bold underline" : "underline"
+                  isActive ? "text-yellow-500 font-bold underline" : "no-underline"
                 }
               >
                 About
@@ -67,7 +67,7 @@ function Nav() {
               <NavLink
                 to="/contact"
                 className={({ isActive }) =>
-                  isActive ? "text-yellow-500 font-bold underline" : "underline"
+                  isActive ? "text-yellow-500 font-bold underline" : "no-underline"
                 }
               >
                 Contact
@@ -76,13 +76,13 @@ function Nav() {
               <NavLink
                 to="/dashboard"
                 className={({ isActive }) =>
-                  isActive ? "text-yellow-500 font-bold underline" : "underline"
+                  isActive ? "text-yellow-500 font-bold underline" : "no-underline"
                 }
               >
                 Dashboard
               </NavLink>
 
-              <button onClick={logout} className="underline cursor-pointer">
+              <button onClick={logout} className="no-underline cursor-pointer">
                 {user === true ? "Logout" : "Login"}
               </button>
             </ul>
