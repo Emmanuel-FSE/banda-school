@@ -1,8 +1,8 @@
-// import { useState } from "react"
+import { useState } from "react"
 
 function ResetPassword(){
 
-//     const[formToView, SetFormToView] =useState(0)
+     const[formToView, SetFormToView] =useState(0)
 
     return(
         <div className=" absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center">
