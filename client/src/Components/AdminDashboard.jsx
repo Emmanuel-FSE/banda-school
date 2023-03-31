@@ -20,19 +20,27 @@ function AdminDashboard() {
         console.error("Error:", error);
       });
   }, []);
+
   const handleUpdate = async (event) => {
     event.preventDefault();
     try {
+      const body = {};
+      if (name) {
+        body.name = name;
+      }
+      if (email) {
+        body.email = email;
+      }
       const response = await fetch(`/admins/${admin.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify(body),
       });
       const data = await response.json();
       console.log("Success:", data);
-      setAdmin({ ...admin, name, email }); // update the state
+      setAdmin({ ...admin, ...body }); // update the state
       setIsUpdating(false);
     } catch (error) {
       console.error("Error:", error);
@@ -114,7 +122,6 @@ function AdminDashboard() {
           Update
         </button>
         <NavLink className="block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 focus:outline-none focus:shadow-outline" to='/sign-up'>Enroll a new student</NavLink>
-        <NavLink className="block mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 focus:outline-none focus:shadow-outline" to='/new-course'>Create a new course</NavLink>
       </div>
     );
   };
@@ -128,3 +135,6 @@ function AdminDashboard() {
 }
 
 export default AdminDashboard;
+    
+    
+    
